@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+
+    <form action="." method="post">
+        {% csrf_token %}
+        <div class="container">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <br>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <br>
+            <input type="submit" value="Login" />
+        </div>
+    <br>
+    <a href="{% url 'myapp:password_reset' %}">Reset Password</a>
+    </form>
+{% endblock %}
+
+
+
